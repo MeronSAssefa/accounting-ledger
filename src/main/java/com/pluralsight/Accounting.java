@@ -39,7 +39,7 @@ public class Accounting {
                     break;
 
                 case "P":
-                    System.out.println("Make payment selected");
+                    Debit.makePayment();
                     break;
 
                 case "L":
