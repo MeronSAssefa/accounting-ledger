@@ -9,7 +9,6 @@ The program reads and writes data from a CSV file and lets users view transactio
 accounting-ledger/
 ├── images/
 │   └── home-screen.png
-│
 ├── src/
 │   └── main/
 │       └── java/
@@ -21,4 +20,24 @@ accounting-ledger/
 │
 ├── pom.xml              # Project configuration (Maven)
 ├── transactions.csv     # Stores all transactions
-└── README.md            # Project documentation
+└── README.md           # Project documentation
+ ```
+## Program Flow 
+User Input → Home Screen
+├── Add Deposit → Save to CSV
+├── Make Payment → Save to CSV
+└── Ledger Screen
+     ├── View All
+     ├── View Deposits
+     ├── View Payments
+     └── Reports
+        ├── Month To Date
+        ├── Previous Month
+        ├── Year To Date
+        ├── Previous Year
+        └── Search by Vendor
+
+
+## Interesting code 
+
+
