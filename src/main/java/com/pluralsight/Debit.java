@@ -39,7 +39,7 @@ public class Debit {
         System.out.println("Amount: $" + amount);
         System.out.println("--------------------------------");
 
-        System.out.print("Save this payment? (Y/N): ");
+        System.out.print("Make this payment? (Y/N): ");
         String confirm = scanner.nextLine().strip().toUpperCase();
 
         if (!confirm.equals("Y")) {
@@ -56,7 +56,7 @@ public class Debit {
 
             writer.close();
 
-            System.out.println("Payment saved!");
+            System.out.println("Payment Made!");
 
         }
         catch (Exception ex) {

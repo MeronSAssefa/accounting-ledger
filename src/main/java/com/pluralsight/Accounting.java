@@ -118,6 +118,7 @@ public class Accounting {
         System.out.println("3) Year To Date");
         System.out.println("4) Previous Year");
         System.out.println("5) Search By Vendor");
+        System.out.println("6) Custom Search");
         System.out.println("0) Back");
 
         System.out.println("choose an option");
