@@ -19,27 +19,30 @@ public class Accounting {
         homeScreen();
     }
 
-
     public static void homeScreen(){
         boolean running = true;
 
         while(running) {
-            System.out.println("Welcome to Accounting Ledger");
-            System.out.println("D) Add Deposit");
-            System.out.println("P) Make Payment");
-            System.out.println("L) Ledger");
-            System.out.println("X) Exit");
-
-            System.out.println("Choose an option: ");
+            System.out.println("=================================");
+            System.out.println("      ACCOUNTING LEDGER APP      ");
+            System.out.println("=================================");
+            System.out.println("| D) Add Deposit                |");
+            System.out.println("| P) Make Payment               |");
+            System.out.println("| L) Ledger                     |");
+            System.out.println("| X) Exit                       |");
+            System.out.println("=================================");
+            System.out.print("Choose an option: ");
             String choice = scanner.nextLine().strip().toUpperCase();
 
             switch (choice) {
                 case "D":
                     Deposit.addDeposit();
+                    transactions = loadTransactions(); //refresh list so it can show up immediately
                     break;
 
                 case "P":
                     Debit.makePayment();
+                    transactions = loadTransactions();
                     break;
 
                 case "L":

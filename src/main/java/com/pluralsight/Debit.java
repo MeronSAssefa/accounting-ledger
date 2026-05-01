@@ -29,6 +29,24 @@ public class Debit {
         String paymentLine= date + "|" + time + "|" + description + "|" + vendor + "|" + amount;
         String transactionFile = "transactions.csv";
 
+        System.out.println();
+        System.out.println("Please confirm this payment:");
+        System.out.println("--------------------------------");
+        System.out.println("Date: " + date);
+        System.out.println("Time: " + time);
+        System.out.println("Description: " + description);
+        System.out.println("Vendor: " + vendor);
+        System.out.println("Amount: $" + amount);
+        System.out.println("--------------------------------");
+
+        System.out.print("Save this payment? (Y/N): ");
+        String confirm = scanner.nextLine().strip().toUpperCase();
+
+        if (!confirm.equals("Y")) {
+            System.out.println("Payment canceled.");
+            return;
+        }
+
         try{
             FileWriter fileWriter = new FileWriter(transactionFile, true);
             BufferedWriter writer = new BufferedWriter(fileWriter);
