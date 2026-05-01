@@ -12,7 +12,7 @@ public class Deposit {
     public static void addDeposit(){
         System.out.println("--Add Deposit Screen--");
 
-        System.out.println("Enter description: ");
+        System.out.println("Enter the description: ");
         String description = scanner.nextLine().strip();
 
         System.out.println("Enter the Vendor name: ");
