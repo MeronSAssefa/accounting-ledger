@@ -192,6 +192,9 @@ public class Accounting {
                         printTransaction(transaction);
                     }
                 break;
+            case "6":
+                CustomSearch.search(transactions, scanner);
+                break;
             case"0":
                 break;
             default:
