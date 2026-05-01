@@ -74,26 +74,14 @@ public class Accounting {
 
                 case "A":
                     for(Transaction transaction : transactions){
-                        System.out.println(
-                                transaction.getDate() + " | " +
-                                transaction.getTime() + " | " +
-                                transaction.getDescription() + " | " +
-                                transaction.getVendor() + " | " +
-                                transaction.getAmount()
-                        );
+                        printTransaction(transaction);
                     }
                     break;
 
                 case "D":
                     for(Transaction transaction : transactions){
                         if (transaction.getAmount() > 0){
-                            System.out.println(
-                                            transaction.getDate() + " | " +
-                                            transaction.getTime() + " | " +
-                                            transaction.getDescription() + " | " +
-                                            transaction.getVendor() + " | " +
-                                            transaction.getAmount()
-                            );
+                           printTransaction(transaction);
                         }
                     }
                     break;
@@ -101,13 +89,7 @@ public class Accounting {
                 case "P":
                     for(Transaction transaction : transactions){
                         if(transaction.getAmount() < 0){
-                            System.out.println(
-                                            transaction.getDate() + " | " +
-                                            transaction.getTime() + " | " +
-                                            transaction.getDescription() + " | " +
-                                            transaction.getVendor() + " | " +
-                                            transaction.getAmount()
-                            );
+                            printTransaction(transaction);
                         }
                     }
                     break;
@@ -147,13 +129,7 @@ public class Accounting {
                     if(transactionDate.getMonth() == today.getMonth() &&
                        transactionDate.getYear() == today.getYear()){
 
-                        System.out.println(
-                                        transaction.getDate() + " | " +
-                                        transaction.getTime() + " | " +
-                                        transaction.getDescription() + " | " +
-                                        transaction.getVendor() + " | " +
-                                        transaction.getAmount()
-                        );
+                       printTransaction(transaction);
                     }
 
                 }
@@ -167,13 +143,7 @@ public class Accounting {
                     if(transactionDate.getMonth() == lastMonth.getMonth() &&
                        transactionDate.getYear() == lastMonth.getYear()){
 
-                        System.out.println(
-                                        transaction.getDate() + " | " +
-                                        transaction.getTime() + " | " +
-                                        transaction.getDescription() + " | " +
-                                        transaction.getVendor() + " | " +
-                                        transaction.getAmount()
-                        );
+                       printTransaction(transaction);
                     }
                 }
 
@@ -183,13 +153,7 @@ public class Accounting {
                     LocalDate transactionDate = LocalDate.parse(transaction.getDate());
 
                     if(transactionDate.getYear() == today.getYear()){
-                        System.out.println(
-                                        transaction.getDate() + " | " +
-                                        transaction.getTime() + " | " +
-                                        transaction.getDescription() + " | " +
-                                        transaction.getVendor() + " | " +
-                                        transaction.getAmount()
-                        );
+                        printTransaction(transaction);
                     }
                 }
                 break;
@@ -200,13 +164,7 @@ public class Accounting {
                     LocalDate transactionDate =LocalDate.parse(transaction.getDate());
 
                     if(lastYear.getYear() == transactionDate.getYear()){
-                        System.out.println(
-                                        transaction.getDate() + " | " +
-                                        transaction.getTime() + " | " +
-                                        transaction.getDescription() + " | " +
-                                        transaction.getVendor() + " | " +
-                                        transaction.getAmount()
-                        );
+                       printTransaction(transaction);
                     }
                 }
                 break;
@@ -216,13 +174,7 @@ public class Accounting {
 
                 for(Transaction transaction: transactions)
                     if(transaction.getVendor().equalsIgnoreCase(vendorName)){
-                        System.out.println(
-                                        transaction.getDate() + " | " +
-                                        transaction.getTime() + " | " +
-                                        transaction.getDescription() + " | " +
-                                        transaction.getVendor() + " | " +
-                                        transaction.getAmount()
-                        );
+                        printTransaction(transaction);
                     }
                 break;
             case"0":
@@ -233,8 +185,16 @@ public class Accounting {
 
         }
     }
-
-
+    // created a method to avoid redundancy
+    public static void printTransaction(Transaction transaction) {
+        System.out.println(
+                        transaction.getDate() + " | " +
+                        transaction.getTime() + " | " +
+                        transaction.getDescription() + " | " +
+                        transaction.getVendor() + " | " +
+                        transaction.getAmount()
+        );
+    }
     public static ArrayList<Transaction> loadTransactions(){
          String transactionFile = "transactions.csv";
 
