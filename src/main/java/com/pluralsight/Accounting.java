@@ -139,6 +139,8 @@ public class Accounting {
                 break;
             case"2":
                 LocalDate lastMonth = today.minusMonths(1);
+                boolean found = false;
+
                 for(Transaction transaction: transactions){
 
                     LocalDate transactionDate = LocalDate.parse(transaction.getDate());
@@ -147,7 +149,11 @@ public class Accounting {
                        transactionDate.getYear() == lastMonth.getYear()){
 
                        printTransaction(transaction);
+                       found = true;
                     }
+                }
+                if(!found){
+                    System.out.println("No transactions found.");
                 }
 
                 break;
@@ -162,13 +168,18 @@ public class Accounting {
                 break;
             case"4":
                 LocalDate lastYear = today.minusYears(1);
+                boolean find = false;
 
                 for(Transaction transaction : transactions){
                     LocalDate transactionDate =LocalDate.parse(transaction.getDate());
 
                     if(lastYear.getYear() == transactionDate.getYear()){
                        printTransaction(transaction);
+                       find = true;
                     }
+                }
+                if(!find){
+                    System.out.println("No transactions found.");
                 }
                 break;
             case"5":

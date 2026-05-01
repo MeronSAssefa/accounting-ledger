@@ -40,5 +40,20 @@ User Input → Home Screen
 ```
 
 ## Interesting code 
+``` text
+System.out.print("Save this deposit? (Y/N): ");
+String confirm = scanner.nextLine().strip().toUpperCase();
 
+if (!confirm.equals("Y")) {
+    System.out.println("Payment canceled.");
+    return;
+}
+```
 
+## Challenges encountered
+
+One challenge I faced was when I was working on the report features like Previous Month and Previous Year.  
+At first, nothing was showing up, and I thought my code was broken.
+
+Later, I realized that my `transactions.csv` file only had data from April 2026, so there were no transactions from other months or years to display.  
+After adding more sample data, the reports started working correctly.
