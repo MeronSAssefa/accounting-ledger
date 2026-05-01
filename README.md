@@ -23,6 +23,7 @@ accounting-ledger/
 └── README.md           # Project documentation
  ```
 ## Program Flow 
+``` text
 User Input → Home Screen
 ├── Add Deposit → Save to CSV
 ├── Make Payment → Save to CSV
@@ -36,7 +37,7 @@ User Input → Home Screen
         ├── Year To Date
         ├── Previous Year
         └── Search by Vendor
-
+```
 
 ## Interesting code 
 
